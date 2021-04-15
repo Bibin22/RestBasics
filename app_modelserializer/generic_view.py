@@ -8,8 +8,7 @@ from rest_framework.views import APIView
 from rest_framework import generics
 from rest_framework import mixins
 
-class GenericAPIViews(generics.GenericAPIView, mixins.ListModelMixin, mixins.CreateModelMixin,
-                     mixins.UpdateModelMixin):
+class GenericAPIViews(generics.GenericAPIView, mixins.ListModelMixin, mixins.CreateModelMixin):
     serializer_class = ArticleSerializer
     queryset = Article.objects.all()
     def get(self, request):

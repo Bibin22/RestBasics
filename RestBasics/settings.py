@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'app_RestBasics',
     'app_modelserializer',
+    'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
