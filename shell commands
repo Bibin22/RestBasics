@@ -1,0 +1,23 @@
+>>> from app_RestBasics.models import Article
+>>> from app_RestBasics.serializers import ArticleSerializer
+>>> from rest_framework.renderers import JSONRenderer
+>>> from rest_framework.parsers import JSONParser
+>>> a = Article(title = 'title_test_0', author = 'author_test_0', email = 'email_test_0@gmail.com')
+>>> a.save()
+>>> a = Article(title = 'title_test_1', author = 'author_test_1', email = 'email_test_1@gmail.com')
+>>> a.save()
+>>> serializer = ArticleSerializer(a)
+>>> serializer.data
+{'title': 'title_test_1', 'author': 'author_test_1', 'email': 'email_test_1@gmail.com', 'date': '2021-04-15'}
+>>> content = JSONRenderer().render(serializer.data)
+>>> content
+b'{"title":"title_test_1","author":"author_test_1","email":"email_test_1@gmail.com","date":"2021-04-15"}'
+>>> serializer = ArticleSerializer(Article.objects.all(), many=True)
+>>> serializer.data
+[OrderedDict([('title', 'title_test_0'), ('author', 'author_test_0'), ('email', 'email_test_0@gmail.com'), ('date', '2021-04-15')]), OrderedDict([('title', 'title_test_1'
+), ('author', 'author_test_1'), ('email', 'email_test_1@gmail.com'), ('date', '2021-0
+4-15')])]
+
+
+
+
