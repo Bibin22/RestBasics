@@ -6,10 +6,12 @@ from .generic_view import GenericAPIViews, GenericDetails
 from .authentications import GenericAPIView
 from .viewsets import ArticleViewset
 from .generic_viewset import ArticleGenericViewset
+from .model_viewset import ArticleModelViewSet
 from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register('viewset', ArticleViewset, basename='article')
 router.register('generic_viewset', ArticleGenericViewset, basename='article')
+router.register('model_viewset', ArticleModelViewSet, basename='article')
 urlpatterns = [
     path('', article_list),
     path('detail/<int:id>', article_detail),
@@ -24,5 +26,8 @@ urlpatterns = [
     path('viewset/<int:pk>', include(router.urls)),
     path('generic_viewset/',include(router.urls)),
     path('generic_viewset/<int:pk>', include(router.urls)),
+    path('model_viewset/',include(router.urls)),
+    path('model_viewset/<int:pk>', include(router.urls)),
+
 
 ]
