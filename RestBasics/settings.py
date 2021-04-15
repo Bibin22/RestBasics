@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'rest_framework',
     'app_RestBasics',
+    'app_modelserializer',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

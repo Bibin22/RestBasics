@@ -1,3 +1,6 @@
+
+#serializers
+
 >>> from app_RestBasics.models import Article
 >>> from app_RestBasics.serializers import ArticleSerializer
 >>> from rest_framework.renderers import JSONRenderer
@@ -18,6 +21,18 @@ b'{"title":"title_test_1","author":"author_test_1","email":"email_test_1@gmail.c
 ), ('author', 'author_test_1'), ('email', 'email_test_1@gmail.com'), ('date', '2021-0
 4-15')])]
 
+# Model Serializers
 
+>>> from app_RestBasics.models import Article
+>>> from app_modelserializer.serializers import ArticleSerializer
+>>> from rest_framework.renderers import JSONRenderer
+>>> from rest_framework.parsers import JSONParser
+>>> serializer = ArticleSerializer()
+>>> print(repr(serializer))
+ArticleSerializer():
+    id = IntegerField(label='ID', read_only=True)
+    title = CharField(max_length=100)
+    author = CharField(max_length=100)
+>>>
 
 
