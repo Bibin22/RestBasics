@@ -33,6 +33,6 @@ ArticleSerializer():
     id = IntegerField(label='ID', read_only=True)
     title = CharField(max_length=100)
     author = CharField(max_length=100)
->>>
+>>completd
 
 
